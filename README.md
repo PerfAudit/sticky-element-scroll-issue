@@ -1,4 +1,4 @@
-Solutions with Performance Issues around Sticky elements during scroll
+Sticky element scroll issue
 =====
 
 Open any of the below mentioned links and try scrolling. Once scrolled, view source of webpage and understand what powers the stickyness and how well it performs in comparison to other solutions.
