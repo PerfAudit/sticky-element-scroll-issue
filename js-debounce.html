@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sticky Header using Debounce</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<body>
+	<header>
+		<span>Sticky Header using Debounce</span>
+	</header>
+	<script type="text/javascript">
+		(function() {
+			var headerEl = document.getElementsByTagName('header')[0];
+			var scrollTimeOut;
+
+			window.addEventListener('scroll', function() {
+				if(scrollTimeOut) {
+					clearTimeout(scrollTimeOut);
+				}
+				scrollTimeOut = setTimeout(function() {
+					console.log('DOM manipulation');
+					headerEl.setAttribute("style", "margin-top: " + this.scrollY + "px");
+				// waits for 30ms before triggering DOM manipulation
+				}, 30);
+			});
+		}());
+	</script>
+</body>
+</html>

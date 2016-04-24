@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sticky Header using CSS Transform</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<body>
+	<header>
+		<span>Sticky Header using CSS Transform</span>
+	</header>
+	<script type="text/javascript">
+		(function() {
+			var headerEl = document.getElementsByTagName('header')[0];
+			window.addEventListener('scroll', function() {
+				console.log('DOM manipulation');
+				headerEl.setAttribute("style", "transform: translateY(" + this.scrollY + "px)");
+			});
+		}());
+	</script>
+</body>
+</html>

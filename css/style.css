@@ -1,0 +1,14 @@
+body {
+	height: 10000px;
+	margin: 0px;
+}
+header {
+	width: 100%;
+	background-color: #000;
+	color: #fff;
+	height: 100px;
+	padding: 20px;
+}
+header span {
+	line-height: 100px;
+}

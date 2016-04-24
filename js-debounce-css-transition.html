@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sticky Header using CSS Transition and Debounce</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<style type="text/css">
+	header {
+		transition: 0.5s ease-in-out;
+		will-change: transform;
+	}
+</style>
+<body>
+	<header>
+		<span>Sticky Header using CSS Transition and Debounce</span>
+	</header>
+	<script type="text/javascript">
+		(function() {
+			var headerEl = document.getElementsByTagName('header')[0];
+			var scrollTimeOut;
+
+			window.addEventListener('scroll', function() {
+				if(scrollTimeOut) {
+					clearTimeout(scrollTimeOut);
+				}
+				scrollTimeOut = setTimeout(function() {
+					console.log('DOM manipulation');
+					headerEl.setAttribute("style", "transform: translateY(" + this.scrollY + "px)");
+				// waits for 30ms before triggering DOM manipulation
+				}, 30);
+			});
+		}());
+	</script>
+</body>
+</html>

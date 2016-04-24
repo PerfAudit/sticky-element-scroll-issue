@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sticky Header using JavaScript and Margin Top CSS change</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<body>
+	<header>
+		<span>Sticky Header using JavaScript and Margin Top CSS change</span>
+	</header>
+	<script type="text/javascript">
+		(function() {
+			var headerEl = document.getElementsByTagName('header')[0];
+			window.addEventListener('scroll', function() {
+				console.log('DOM manipulation');
+				headerEl.setAttribute("style", "margin-top: " + this.scrollY + "px");
+			});
+		}());
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sticky Header using JS Animate API</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<body>
+	<header>
+		<span>Sticky Header using JS Animate API</span>
+	</header>
+	<script type="text/javascript">
+		(function() {
+			var headerEl = document.getElementsByTagName('header')[0];
+			var scrollTimeOut;
+			var scrollY = 0;
+
+			window.addEventListener('scroll', function() {
+				if(scrollTimeOut) {
+					clearTimeout(scrollTimeOut);
+				}
+				scrollTimeOut = setTimeout(function() {
+					requestAnimationFrame(function() {
+						console.log('DOM manipulation');
+						headerEl.animate([
+					      {transform: 'translateY(' + scrollY + 'px)'},
+					      {transform: 'translateY(' + this.scrollY + 'px)'}
+					    ], {
+					    	duration: 300,
+					    	easing: 'ease-in-out',
+					    	fill: 'both'
+					    });
+					    scrollY = this.scrollY;
+					});
+				// waits for 300ms before triggering DOM manipulation
+				}, 300);
+			});
+		}());
+	</script>
+</body>
+</html>
